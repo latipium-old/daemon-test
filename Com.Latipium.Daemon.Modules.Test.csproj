@@ -3,6 +3,7 @@
   <PropertyGroup>
     <ProjectGuid>{4AB8A195-4A7B-4C5D-B56D-74D9F1548E63}</ProjectGuid>
     <RootNamespace>Com.Latipium.Daemon.Modules.Test</RootNamespace>
+    <LatipiumTarget>Executable</LatipiumTarget>
     <CustomCommands>
       <CustomCommands>
         <Command type="Custom" name="Authorize CI" command="&quot;$(SolutionDir)/packages/CommandWrapper.2.2/bin/command-wrapper.exe&quot; WRAPPER_NUGET=true WRAPPER_ASK=3 -- &quot;$(SolutionDir)/packages/Com.Latipium.DevTools.1.2.2.2/bin/Com.Latipium.DevTools.exe&quot; authorize -C &quot;$(ProjectDir)&quot; &quot;Please enter your NuGet.org API key:&quot;" workingdir="$(SolutionDir)/packages/Com.Latipium.DevTools.1.2.2.2/" />
@@ -14,6 +15,7 @@
     <OutputType>Exe</OutputType>
     <AssemblyName>Com.Latipium.Daemon.Modules.Test</AssemblyName>
     <ReleaseVersion>1.0</ReleaseVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <Import Project="Com.Latipium.Template.xml" />
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
@@ -42,16 +44,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Com.Latipium.Core">
-      <HintPath>$(SolutionDir)\packages\Com.Latipium.Core.0.0.16.3\lib\net45\Com.Latipium.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>$(SolutionDir)\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    <Reference Include="Com.Latipium.Daemon.Api">
+      <HintPath>$(SolutionDir)\packages\Com.Latipium.Daemon.Api.0.0.45.10\lib\net45\Com.Latipium.Daemon.Api.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="AssemblyVersion.cs" />
+    <Compile Include="Com\Latipium\Daemon\Modules\Test\Entry.cs" />
+    <Compile Include="Com\Latipium\Daemon\Modules\Test\TestService.cs" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
@@ -62,5 +63,12 @@
   </ProjectExtensions>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Com\" />
+    <Folder Include="Com\Latipium\" />
+    <Folder Include="Com\Latipium\Daemon\" />
+    <Folder Include="Com\Latipium\Daemon\Modules\" />
+    <Folder Include="Com\Latipium\Daemon\Modules\Test\" />
   </ItemGroup>
 </Project>
