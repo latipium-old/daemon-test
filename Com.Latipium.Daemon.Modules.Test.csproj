@@ -43,10 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="Com.Latipium.Daemon.Api">
-      <HintPath>$(SolutionDir)\packages\Com.Latipium.Daemon.Api.0.0.45.10\lib\net45\Com.Latipium.Daemon.Api.dll</HintPath>
+    <Reference Include="Com.Latipium.Daemon.Api, Version=0.0.50.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)\packages\Com.Latipium.Daemon.Api.0.0.50.2\lib\net45\Com.Latipium.Daemon.Api.dll</HintPath>
     </Reference>
+    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -64,11 +64,5 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Com\" />
-    <Folder Include="Com\Latipium\" />
-    <Folder Include="Com\Latipium\Daemon\" />
-    <Folder Include="Com\Latipium\Daemon\Modules\" />
-    <Folder Include="Com\Latipium\Daemon\Modules\Test\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
